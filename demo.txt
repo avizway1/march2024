@@ -1,0 +1,49 @@
+
+
+Cloud computing : you are using someone else computer. 
+
+Definition of Cloud Computing : Cloud computing means storing and accessing data and programs over the Internet instead of your computer's hard drive.
+
+NIST Definition of Cloud Computing : 
+Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction.
+
+
+On-demand self-service : you can choose what service you want to use. you will get charged for the resources you are actually using. you no need to depend on service provider to get these things done.
+
+Rapid elasticity : We can easily Upgrade and downgrade the resources. it wont take much time to perform. 
+Example : We can launch server with very small config, if required we can upgrade same server to very high configuration. No need to sped lot of time. no need to worry about hardware dependencies.
+
+Measured Services : Whatever you use, the usage will be measured. (per gb/month, /hr, /sec)
+
+Broad network access & High Availability : Cloud service providers has infra almost across the globe. Instead of spending time and building our own infra, we can use this cloud providers infra and deliver our application quickly.
+
+Resource pooling. : You can use cloud shared tenancy mechanism to save cost. Underlying resources share with multiple customers.
+
+----------------
+
+Pay-as-you-go : pay for the resources you are actually using. 
+
+You used a server for 1 hr in a day = 1 hr cost..
+
+----------------
+
+DEPLOYMENT MODELS :
+
+Public cloud   : THis model is open for everyone. Anyone can create an accont and start using. 
+Azure, GCP, AWS..  Maintenance : Service provider responsibility. 
+
+Private cloud  : Not open for everyone, Dedicated for only one organisation.  Only that org users / only authorised uses can use. Maint: Your team can fix it / you can take assistance from 3rd party.
+
+Hybrid cloud : Combination of one or more cloud deployment models.. Public + public / Public + private
+Existing Servers + creting new svrs in AWS..  Azure + AWS.. 
+==> Site-to-site VPN connection, AWS Direct Connect
+
+Community cloud : group of org build the infra together and only that group of org use that infra. main : One of the org from group / 3rd party.
+
+
+
+Service models of Cloud Computing : 
+
+-> IaaS : We need takes care about the OS level onwords. No need to take care about Physical resources.
+-> PaaS : Platform as a Service : Moderate efforts.. Our efforts is to design application only, not infra management / configuration management.
+-> SaaS : Software as a Service : No efforts / very very less efforts
