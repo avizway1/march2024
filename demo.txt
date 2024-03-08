@@ -1,4 +1,14 @@
 
+AWS @ 7:30 AM (IST) By Mr.Avinash
+Day-1 https://youtu.be/U7IM_IdG4C4
+
+
+Dear all students please attend reglur class if anything I will help you   my self  syam nit 
+whats app no 8247601157
+thank you 
+Naresh it team
+
+========================================================
 
 Cloud computing : you are using someone else computer. 
 
@@ -7,11 +17,20 @@ Definition of Cloud Computing : Cloud computing means storing and accessing data
 NIST Definition of Cloud Computing : 
 Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction.
 
+Pay-as-go ==> Pay for the resources you are actually using.. 
+if you are using a server for 5 min, you will get charged for 5 min only.. 
+
 
 On-demand self-service : you can choose what service you want to use. you will get charged for the resources you are actually using. you no need to depend on service provider to get these things done.
 
 Rapid elasticity : We can easily Upgrade and downgrade the resources. it wont take much time to perform. 
 Example : We can launch server with very small config, if required we can upgrade same server to very high configuration. No need to sped lot of time. no need to worry about hardware dependencies.
+
+
+t2.micro	: 1 CPU, 1 RAM 
+medium		: 2 CPU, 4 RAM
+xlarge		: 4 CPU, 16 RAM
+
 
 Measured Services : Whatever you use, the usage will be measured. (per gb/month, /hr, /sec)
 
@@ -40,7 +59,7 @@ Existing Servers + creting new svrs in AWS..  Azure + AWS..
 
 Community cloud : group of org build the infra together and only that group of org use that infra. main : One of the org from group / 3rd party.
 
-
+=========
 
 Service models of Cloud Computing : 
 
