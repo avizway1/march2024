@@ -1,12 +1,16 @@
 
 AWS @ 7:30 AM (IST) By Mr.Avinash
 Day-1 https://youtu.be/U7IM_IdG4C4
+Day-2 https://youtu.be/F-hp_3AMk2E
 
 
-Dear all students please attend reglur class if anything I will help you   my self  syam nit 
-whats app no 8247601157
-thank you 
-Naresh it team
+Dear all 
+Students please attend regular class aws
+if anything please contact "syam" nit 
+What's app no 8247601157
+
+Fee - Without videos : 10000
+with videos : 14000
 
 ========================================================
 
@@ -66,3 +70,6 @@ Service models of Cloud Computing :
 -> IaaS : We need takes care about the OS level onwords. No need to take care about Physical resources.
 -> PaaS : Platform as a Service : Moderate efforts.. Our efforts is to design application only, not infra management / configuration management.
 -> SaaS : Software as a Service : No efforts / very very less efforts
+
+
+
