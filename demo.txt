@@ -3,14 +3,43 @@ AWS @ 7:30 AM (IST) By Mr.Avinash
 Day-1 https://youtu.be/U7IM_IdG4C4
 Day-2 https://youtu.be/F-hp_3AMk2E
 
+Day-3 https://youtu.be/Xdl7IVCDmNo  (Recaped first 2 sessions also)
 
-Dear all 
-Students please attend regular class aws
-if anything please contact "syam" nit 
-What's app no 8247601157
+
+Dear all students please clear fee process on 15th March
+if anything please contact 
+syam nit what's app no : 8247601157
+
 
 Fee - Without videos : 10000
 with videos : 14000
+
+BANK A/C DETAILS:
+Name: Naresh i Technologies
+A/C No. 50200022639833
+Bank: HDFC                                            
+A/C Type: Current Account
+IFSC Code: HDFC0001627
+MICR Code: 500240035
+Branch Code: 001627
+Branch:  Ameerpeta
+
+IF ANY THING PLEASE CONTACT  YOUR ADMIN  SYAM@ NIT  WHATS APP NO 
+dont call send messege
+
+Please fill and send the details mentioned below 
+Name
+whatsapp no
+Email I'd
+Course
+Faculty name
+Batch timings
+With screenshot of the payment
+Send what's app no syam nit.
+Thank you
+Naresh it
+
+I paid Naresh i Technologies on Razorpay Payment Pages. Check it out. https://pages.razorpay.com/Naresh-IT
 
 ========================================================
 
@@ -52,7 +81,7 @@ You used a server for 1 hr in a day = 1 hr cost..
 
 DEPLOYMENT MODELS :
 
-Public cloud   : THis model is open for everyone. Anyone can create an accont and start using. 
+Public cloud : THis model is open for everyone. Anyone can create an accont and start using. 
 Azure, GCP, AWS..  Maintenance : Service provider responsibility. 
 
 Private cloud  : Not open for everyone, Dedicated for only one organisation.  Only that org users / only authorised uses can use. Maint: Your team can fix it / you can take assistance from 3rd party.
@@ -68,8 +97,42 @@ Community cloud : group of org build the infra together and only that group of o
 Service models of Cloud Computing : 
 
 -> IaaS : We need takes care about the OS level onwords. No need to take care about Physical resources.
--> PaaS : Platform as a Service : Moderate efforts.. Our efforts is to design application only, not infra management / configuration management.
--> SaaS : Software as a Service : No efforts / very very less efforts
 
+-> PaaS : Platform as a Service : Moderate efforts.. Our efforts is to design application only, not infra management / configuration management.
+
+-> SaaS : Software as a Service : No efforts / very very less efforts.
+
+
+
+Requirement : I need a webpage that can be accesable across the globe.
+
+
+
+
+
+Course Content overview :
+
+-> Introduction to Cloud COmputing
+-> AWS introduction and Global infra
+-> IAM (identity and access management)
+-> S3 (Sinmple Storage Service) - Storage module - AWS Version of GDrive
+-> EC2 (Elastic Compute Cloud) 
+-> Route53 (DNS Service)
+-> VPC (Virtual private Cloud) - Networking part
+-> RDS (Relational Databases)
+-> Monitoring (Cloudtrail, cloudwatch, trusted advisor, config)
+-> Security
+-> Multi Account Management
+-> Automations (lambda, cloudformation, CICD)
+-> Containers
+-> Interview prep (day2day, resume prep)
+
+Training, Development, Testing, Integration, UAT , Production
+
+
+Cert: Cloudpractitioner and Associate cert exams.
+
+
+AWS : Starts from tomorrow
 
 
