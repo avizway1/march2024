@@ -1,9 +1,12 @@
 
 AWS @ 7:30 AM (IST) By Mr.Avinash
+Cloud Computing :
 Day-1 https://youtu.be/U7IM_IdG4C4
 Day-2 https://youtu.be/F-hp_3AMk2E
+Day-3 https://youtu.be/Xdl7IVCDmNo		(Recaped first 2 sessions also)
+Day-4 https://youtu.be/4Wf1BR-SkQo  
 
-Day-3 https://youtu.be/Xdl7IVCDmNo  (Recaped first 2 sessions also)
+AWS :
 
 
 Dear all students please clear fee process on 15th March
@@ -107,16 +110,13 @@ Service models of Cloud Computing :
 Requirement : I need a webpage that can be accesable across the globe.
 
 
-
-
-
 Course Content overview :
 
 -> Introduction to Cloud COmputing
 -> AWS introduction and Global infra
--> IAM (identity and access management)
+-> IAM (identity and access management) - User Management in AWS
 -> S3 (Sinmple Storage Service) - Storage module - AWS Version of GDrive
--> EC2 (Elastic Compute Cloud) 
+-> EC2 (Elastic Compute Cloud) - Where we can launch and manage servers
 -> Route53 (DNS Service)
 -> VPC (Virtual private Cloud) - Networking part
 -> RDS (Relational Databases)
@@ -133,6 +133,55 @@ Training, Development, Testing, Integration, UAT , Production
 Cert: Cloudpractitioner and Associate cert exams.
 
 
-AWS : Starts from tomorrow
+=================================================================================
+
+D: 13/03/24
+
+What is AWS.?
+
+AWS is CLoud service provider (CSP).
+AWS Builds Data centers across the globe, They provide infra for Org on pay-as-you-go model.
+(Servers, Network, Database, storage, applications, platforms, monitor)
+
+
+Common CSP :
+--> AWS : 2004 onwords.. Oficiallyt launched in 2006 : Chrispinkman and benjamin black : SQS, S3 and EC2
+--> Azure
+--> GCP
+--> Oracle Cloud
+--> Alibaba Cloud
+--> tencent Cloud
+--> IBM Cloud
+
+
+AWS Global infra : 
+
+Region : 33 regions (as of March 24).. geographical location or physical location..  Every region contains multiple AZs.
+
+AZ / Availability Zones : AZ is nothing but a Data Center or combination of Multiple DCs. All the Infra resources runs/available here. Each AZ connects with another AZ with Multiple redundant connectivity. As of march, 24, 105 AZs.. 
+
+PoP / point of Presence / EDGE locations : These are Cached locations. Whatever the data we want to deliver to end customer, we can store the data near to end cistomer location temporarily. So that customer request delivered quickly.
+Works with CDN Mechanism (Content Delivery network).
+
+
+TTL : time to Live : We can configure, how long you want to store the data in Edge location with TTL values.
+
+forcefully you want to clear all the cache : perform "Invalidation"
+
+
+newspaper : 1 day
+prime video : max : 365 days
+
+
+
+
+
+
+
+
+
+
+
+
 
 
