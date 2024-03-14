@@ -1,12 +1,16 @@
 
 AWS @ 7:30 AM (IST) By Mr.Avinash
-Cloud Computing :
 Day-1 https://youtu.be/U7IM_IdG4C4
 Day-2 https://youtu.be/F-hp_3AMk2E
-Day-3 https://youtu.be/Xdl7IVCDmNo		(Recaped first 2 sessions also)
-Day-4 https://youtu.be/4Wf1BR-SkQo  
+Day-3 https://youtu.be/Xdl7IVCDmNo		(Recap of first 2 sessions)
+Day-4 https://youtu.be/4Wf1BR-SkQo	
 
-AWS :
+AWS Demo : Starting from here
+
+Day-1 https://youtu.be/jV6pPfhDVaQ 		(AWS Global infra)
+Day-2 AWS Account Creation and Support plans
+
+
 
 
 Dear all students please clear fee process on 15th March
@@ -171,6 +175,113 @@ forcefully you want to clear all the cache : perform "Invalidation"
 
 newspaper : 1 day
 prime video : max : 365 days
+
+================================================================================================
+
+D: 14/03/24
+
+Use an existing email to create an AWS account.
+
+Step 1 : url : aws.amazon.com/free
+
+Root user email address : your email id. 
+Enter Account Name : Prod Account
+
+Sandbox(or)Training / Dev / SQA (or) testing / UAT / prod 
+
+You will get a verification code to the given email id, grab and enter it here. 
+
+Step 2 : provide contact information.
+
+Accountype : Personal / Professional Account ==> Choose "personal"	==> Your father name
+name, address
+
+Step 3 : Enter Payment information
+Visa/Mastercard/amaex/discovery/rupay
+
+==> To verify card status, AWS Deducts 2 INR / 1 USD.. It will be refunded back in 48-72 Hrs.. 
+
+Step 4 : Identity verification
+
+We have Email / Phone verification option.
+
+Phone verification : Enter your phone number and click on call me now, You'll get a 0000 pin on your screen. Answer the call, and enter the 4 digit pin showin gon your screen.
+
+Email Verification ; ENter your email is, login to email, Enter the 4 digit pin.
+
+Step 5 : Choose a Support Plan for your account
+
+1. Accont and Billing related issues : Free for all support plans.. You will 24x7 365 days phone, email cha chat support.. 
+2. Technical Assistance : Depends on support plan we have choosen.
+
+
+Basic Support plan : Free.. : CHOOSE THIS WHEN YOU ARE CREATING YOUR OWN AWS ACCOUNT
+2 --> No technical support from AWS. AWS KBs / Knowledge Base articles,, Re:post.. 
+Trusted Advisor : Some core area checks
+
+-----
+
+Developer Support Plan : Starts from 29$/Month... 
+2 --> With in 12-24 Local business hours we will get assiatance.. An AWS Associate.. Email support..
+1 user can raise tickets, but we can raise unlimited tickets..
+Trusted Advisor : Some core area checks
+
+Case Severity : 
+General guidance: < 24 hours
+System impaired: < 12 hours
+
+-----
+
+Business Support Plan : starts from 100$/Month
+2 --> With in 1 hours we will get assiatance..  AW AWS Engineer.. email, phone and chat support.. 
+Any user can raise tickets, we can raise unlimited tickets.. 
+Trusted Advisor : Full checks
+
+Case Severity : 
+General guidance: < 24 hours
+System impaired: < 12 hours
+Production system impaired: < 4 hours
+Production system down: < 1 hour
+
+----
+
+Enterprise On-Ramp : Starts from 5,500$/month : We can use this SP for multiple AWS accounts..
+If we have 100/200+ AWS account, we no need to purchase support plan for individual acconts..
+2 --> With in 30 min we will get assiatance.. An AWS Sr. engineer.. email, phone and chat support.. 
+Any user can raise tickets, we can raise unlimited tickets.. 
+Annual Architectural and Operational reviews by AWS
+Trusted Advisor : Full checks
+
+Case Severity : 
+General guidance: < 24 hours
+System impaired: < 12 hours
+Production system impaired: < 4 hours
+Production system down: < 1 hour
+Business/Mission-critical system down: < 30 minutes
+
+--
+
+Enterprise SP : Starts from 15,000$/month
+2 --> With in 15 min we will get assiatance.. An AWS Sr. engineer.. email, phone and chat support.. 
+Any user can raise tickets, we can raise unlimited tickets.. 
+AWS Allocated a Dedicated TAM (Technical account manager)
+Annual Architectural and Operational reviews by AWS
+AWS provides trainings on the services
+Trusted Advisor : Full checks
+
+Case Severity : 
+General guidance: < 24 hours
+System impaired: < 12 hours
+Production system impaired: < 4 hours
+Production system down: < 1 hour
+Business/Mission-critical system down: < 15 minutes
+
+
+We can use "Enterprise SP" and "Enterprise on-ramp SP" for multiple AWS accounts. No need to opt support plan for every account we create.
+==> 1 support plan is sufficient for 100/200+ acocunts also
+
+
+==============================================================================================
 
 
 
