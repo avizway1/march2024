@@ -8,9 +8,7 @@ Day-4 https://youtu.be/4Wf1BR-SkQo
 AWS Demo : Starting from here
 
 Day-1 https://youtu.be/jV6pPfhDVaQ 		(AWS Global infra)
-Day-2 AWS Account Creation and Support plans
-
-
+Day-2 https://youtu.be/MTziYLDny3I		(AWS Account Creation and Support plans)
 
 
 Dear all students please clear fee process on 15th March
@@ -211,7 +209,7 @@ Email Verification ; ENter your email is, login to email, Enter the 4 digit pin.
 
 Step 5 : Choose a Support Plan for your account
 
-1. Accont and Billing related issues : Free for all support plans.. You will 24x7 365 days phone, email cha chat support.. 
+1. Accont and Billing related issues : Free for all support plans.. You will 24x7 365 days phone, email and chat support.. 
 2. Technical Assistance : Depends on support plan we have choosen.
 
 
@@ -280,8 +278,81 @@ Business/Mission-critical system down: < 15 minutes
 We can use "Enterprise SP" and "Enterprise on-ramp SP" for multiple AWS accounts. No need to opt support plan for every account we create.
 ==> 1 support plan is sufficient for 100/200+ acocunts also
 
-
 ==============================================================================================
+
+D: 15/03/24
+
+
+--------
+A company is developing a product. They want to sell..
+
+1 CEO : Access to all data across all departments.			: Root user
+10 memebers : 												: IAM users
+	--> Accounting : salary, budgeting : 2 guys
+	--> marketing : Mark, camps, events, digital marketing : 2 users
+	--> IT Admin : Databse, network, storage, servers and user laptops
+	--> Developers : Developing the product, product customosatio
+	
+In org, we always follow, "least privilages mechanism" ; Provide the permissions to perform his job roles only.
+	
+1 root user ; he will have unrestricted access to AWS account and services.
+IAM users : 
+	--> DBA : 1 IAM user with RDS full Access : he can access only RDS.
+	--> Storage Admins : 1 IAM user with S3 full Access : he can access only S3
+	--> Developers : IAM users.. Manage their permisisons.. 
+	--> Monitoring Team / production Support : IAM user with read only access.. 
+	
+Policy : Document that contains set of permissions on AWS services.
+
+ec2 : launch server
+s3 : storage
+rds : databse
+
+Root user : Have access on AWS Account as well as Services. 
+IAM user with Administrator Access : Have access on AWS Services only, not on Account management. 
+Cant manage account level things.. Change SP, Changing payment info
+
+--------
+
+
+
+Root user : When ever you are login using an email id and password, we call that user as "root user". 
+==> Root user have unrestricted access on our AWS account.
+==> Changing support plan / changing payment methods / closing aws account / transfer account.
+
+We can secure this account by enabling MFA / 2-factor authentication.
+
+
+IAM User : Identity and Access Management : In IAM, We can create users, groups and we can manage user permissions. 
+
+Policy : Set of permissions on our AWS Services.
+
+
+--> least privilages mechanism.
+
+
+Enable Free Tier Alerts : Login to your aws account, Navihate to "Billing and Cost management", Navihate to "billing Preferences", Enable Alert preferences. Enter your email id.
+
+
+aws.amazon.com/free : First 12 months some of the aws services are free. 
+
+
+Root user : Unrestricted access on AWS account.
+
+IAM user with Administrator Access : Almost similar to root user, but he cannot perform account management related activities (account closing / changing support plan / changing payment methods).
+
+
+https://avizway9.signin.aws.amazon.com/console
+
+
+Task 0 : Create an AWS account and Setup password standard, Account Alias for your AWS accounts.
+
+Task 1 : Create an IAM user, Add  "AdministratorAccess" policy. Login and try to access "Billing information". It will Deny. 
+--> provide Billing access to the above IAM user.
+
+Task 2 : create an IAM user, Add "S3FullAccess", login as this user and create a bucket. Now navigate to IAM service and try to create an IAM user and verify.!
+
+Task 3 : create an IAM user, Add "EC2FullAccess", login as this user and try to create a bucket in s3 service..
 
 
 
