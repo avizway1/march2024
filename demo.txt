@@ -315,7 +315,6 @@ Cant manage account level things.. Change SP, Changing payment info
 --------
 
 
-
 Root user : When ever you are login using an email id and password, we call that user as "root user". 
 ==> Root user have unrestricted access on our AWS account.
 ==> Changing support plan / changing payment methods / closing aws account / transfer account.
@@ -355,10 +354,60 @@ Task 2 : create an IAM user, Add "S3FullAccess", login as this user and create a
 Task 3 : create an IAM user, Add "EC2FullAccess", login as this user and try to create a bucket in s3 service..
 
 
+================================================================================
+
+D: 16/03/24
+
+
+https://501170964283.signin.aws.amazon.com/console
+https://avizway9.signin.aws.amazon.com/console
+
+
+--> Enable Free Tier alerts : Whenever you are exceeding free tier usage, we can get alert to given email id. To configure this, Login to your aws account, Navigate to "billing and cost management", look for "Billing Preferences",  and "Alert preferences" then enable free tier alerts.
+
+Configure "Zero Spend" budget alert.. : Whenever any aws service is startyed costing us, we will get alert to given emails. Choose "Zero spend budget", 
+
+-> Navigate to "Billing and cost management", then "Budgets and Planning" choose "Budgets".
+
+
+Implicit Allow : We can access only the services allocated. If we try to access any other service, it will Deny.
+
+Explicit Deny : he can access anything, even something is introduced future, he can access.. But ANything specifically denied, he cannot access.
+
+
+
+Requirement : I Need an IAM user, He need "AdministratorAccess", but No access on "S3 Service".
+Apart from S3, I want this user to work on all other services.
+
+
+create an IAM user, Provide him "AdministratorAccess", Create a policy that can "Deny S3" and add along with existing permisisons.
+
+
+Deny will always have highest priority. You allow 100 times, but denied only 1 time, still deny will take effect.
+
+Policy : Set of Permissions on our aws account. Policy writtens in JSON format.
+--> AWS Managed - Job Function
+--> AWS Managed Policy
+--> Customer Managed Policy
+__________________
+
+Policy : Document contains set of permissions writtens in JSON format. Policy provide permissions on AWS resources for users/groups/roles.
+
+
+--> AWS Managed Policy : Policy provided by AWS, Based on Service.
+--> AWS managed - Job function policy : policy provided by AWS, It is a combination of multiple Services. AWS provided this based on some standard jobs available in market.
+--> Customer Managed policy :  Based on customer requiremnent, he can create and manage.
 
 
 
 
+Task : Enable "free Tier Alerts" on your personal aws accounts.
+Task : Configure Zero Spend budget on you personal account.
+
+Task : Create a policy that can allow a user to access "S3 and EC2". Allocate it to an IAM user, login and verify his access.
+
+Task : Create an IAM user, provide him "AdministratorAccess", Deny this user to access "S3".
+Create a policy "DenyS3" and allocate it to the user, Login as this user and test it.
 
 
 
