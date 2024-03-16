@@ -410,15 +410,15 @@ Task : Create an IAM user, provide him "AdministratorAccess", Deny this user to 
 Create a policy "DenyS3" and allocate it to the user, Login as this user and test it.
 
 
+***
+Free Linux Course : coupon code : AVINASHAWS2
+https://www.udemy.com/course/linuxwithavinash/?couponCode=AVINASHAWS2
+
 
 
 Free jenkins Course : Coupon code : AVINASHAWS
-
 https://www.udemy.com/course/jenkinswithavinash/?couponCode=AVINASHAWS
 
-Free Linux Course : coupon code : AVINASHAWS2
-
-https://www.udemy.com/course/linuxwithavinash/?couponCode=AVINASHAWS2
 
 Free Git Hub: https://www.youtube.com/watch?v=rtI26X6FJX0&list=PLneBjIzDLECkdgoinrTO7D519zgPEmcte
 
