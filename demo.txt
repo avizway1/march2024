@@ -1,5 +1,5 @@
 
-AWS @ 7:30 AM (IST) By Mr.Avinash
+cloud computing Demo
 Day-1 https://youtu.be/U7IM_IdG4C4
 Day-2 https://youtu.be/F-hp_3AMk2E
 Day-3 https://youtu.be/Xdl7IVCDmNo		(Recap of first 2 sessions)
@@ -9,7 +9,9 @@ AWS Demo : Starting from here
 
 Day-1 https://youtu.be/jV6pPfhDVaQ 		(AWS Global infra)
 Day-2 https://youtu.be/MTziYLDny3I		(AWS Account Creation and Support plans)
-Day-3 https://youtu.be/KUxJVPeTbIc   (Introduction to IAM)
+Day-3 https://youtu.be/KUxJVPeTbIc		IAM introduction
+Day-4 https://youtu.be/9XlE8Lcaagk		IAM Policy types
+
 
 Dear all students please clear fee process on 15th March
 if anything please contact 
@@ -415,7 +417,6 @@ Free Linux Course : coupon code : AVINASHAWS2
 https://www.udemy.com/course/linuxwithavinash/?couponCode=AVINASHAWS2
 
 
-
 Free jenkins Course : Coupon code : AVINASHAWS
 https://www.udemy.com/course/jenkinswithavinash/?couponCode=AVINASHAWS
 
@@ -427,3 +428,62 @@ Free Ansible : https://www.youtube.com/playlist?list=PLneBjIzDLECkLTuhBUwTEo5zWQ
 Interview : https://www.youtube.com/watch?v=-ddHWeLv_IE&list=PLneBjIzDLECkZXsv7g-YsP6bBteTpTgLC
 
 
+=========================================================================
+
+
+D: 18/03/24
+
+
+ARN : Amazon Resource Name : A unique identifier for our resources.
+
+arn:aws:iam::501170964283:user/req-user
+arn:aws:iam::501170964283:group/S3-Admins-group
+arn:aws:s3:::avinash
+
+---------
+
+policy simulator : We can simulate IAM user permissions and get information about the performing activity (allow/deny).
+
+---------
+
+CloudTrail : Logging service in AWS. It logs everything (including refresh also).
+--> Enabled by default. We dont have option disable it. 
+--> Defaultly it can store last 90 days logs.
+
+
+
+
+
+
+
+
+
+-----------
+
+Credential report : It gives all IAM users last logged in, pwd expiration, creation data and accesskeys..
+
+-------------
+
+Inline : Not a reusable policy. We can apply policy for specific resource. Hard to track this, Only in special occassions we use this inline policy.
+
+-------------
+
+
+Task  : Create a custom policy to activate MFA for IAM users, He himself able to activate MFA. 
+	Create an IAM user, provide "S3FullAccess". Login as this user and Now try to "Activate MFA". It will give error. Fix this errors and allow him to activate MFA.
+
+
+Task 2 : Create an IAM user, Want to provide "S3FullAccess" with our custom policy/ Customer Managed policy, We need to restrict this user to work only on specific region (mumbai/ap-south-1).
+** You can do it later, once you are comfortable with S3.
+
+Create a policy allow all s3 actions on all resources, Add a "requestedRegion" condition.
+
+==> Login as this user, Try to create bucket in "mumbai" it should allow. If you choose any other regions it should not allow.
+
+Task 3 : Test IP Address conditions in IAM policy. 
+Create S3FullAccess policy, while creating add your network IP Address, allocate it to an IAM user. 
+Now, login as this user and create an S3 bucket, It should work.
+
+Now, Change IP address in above policy, then test it. It should not work.
+
+https://whatismyipaddress.com/
