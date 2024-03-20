@@ -1,0 +1,69 @@
+S3 : Simple storage service
+
+-> Object based storage
+
+Block based storage : Install OS and run programs : EBS (Elastic Block Storage), Instance Store
+Storage over network : EFS (Elastic File System), FSx
+Object based storage : S3 
+
+Object : Any file
+
+
+Bucket in nothing but folder/directory. 
+bucket name should be unique across the globe.
+Min 3 char, max 63 char
+No Cpital letters
+bucket name should not start with .
+We cna use . or -
+No adjesent .. - -
+bucket name should not resemble IP address format.
+While creating a bucket, you need to choose a Region. Your data physically resided in that region.
+S3 is a Global platform.
+
+In s3, we can store unlimited data.
+
+Object size limits
+min object size : 0 bytes / 1 byte
+Max object size : 5 TB
+
+No Pre-provisioning required.
+
+
+AWS Storage classes : 
+
+S3 Standard : Default storage class : Frequently accessed data, We can access data without any delays.
+
+Standard - IA (infreq Accessed) : 
+OneZone - IA 
+usecase : Infreq accessed data, We can access data without any delays.
+
+Glacier
+Glacier Stantads :
+Glacier Deep Archieve
+usercase : Archive / very very less freq accessed data, We can't access data immedately.
+We need to initiate a data restoration to access the data.
+
+Inteligent storage class : If you are not sure about the storage access patterns.
+
+RRS : Redused redundant storage : Not recommended to use.. We can store easily reprodusable data, cost is more than Standard.
+
+
+
+Bulk retrieval
+Typically within 5-12 hours.
+Standard retrieval
+Typically within 3-5 hours.
+Expedited retrieval
+Typically within 1-5 minutes when retrieving less than 250 MB.
+
+
+FREE TIER:
+
+5 GB S3 Standard Storage
+2000 uploads / PUT per month
+20,000 Downloads / GET Per Month
+
+
+
+
+
