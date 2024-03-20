@@ -11,7 +11,9 @@ Day-1 https://youtu.be/jV6pPfhDVaQ 		(AWS Global infra)
 Day-2 https://youtu.be/MTziYLDny3I		(AWS Account Creation and Support plans)
 Day-3 https://youtu.be/KUxJVPeTbIc		IAM introduction
 Day-4 https://youtu.be/9XlE8Lcaagk		IAM Policy types
-
+Day-5 https://youtu.be/Co3wVVxjIUs
+Day-6 https://youtu.be/pKtKFjB08rc
+Day-7 https://youtu.be/P9udLqXd_GM     S3 Introduction
 
 Dear all students please clear fee process on 15th March
 if anything please contact 
