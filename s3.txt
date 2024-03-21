@@ -45,7 +45,7 @@ S3 Free Tier ELigibility :
 --> 2000 PUT (Upload) / 20,000 GET (Download)
 _______________________________________________________________________________
 
-GDrive : 100 gb plan						S3	: no pre provisioning req
+GDrive : 100 gb plan						S3 : no pre provisioning req
 
 20 gb Daily									S3-Standard
 20 gb Infreq 								Standard-IA / OneZOne-IA
@@ -68,7 +68,7 @@ Data replicates across : >= 3 AZs
 Avai : 99.9%, Durability : 99.999999999 (11 9's) 
 Data replicates across : >= 3 AZs
 
---> One Zone-IA : Data will be available immedeatly. Designed to store : infrequently accessed data. Store only non-critical data
+--> One Zone-IA : Data will be available immedeatly. Designed to store : infrequently accessed data. Store only non-critical data. Cost less than 40% compared to Standard-IA.
 Avai : 99.5 %, Durability : 99.999999999 (11 9's) 
 Data replicates across : 1 AZs
 
@@ -96,6 +96,11 @@ S3 Pricing :
 --> How many GET/PUT operations (uploads/downloaded object count)
 --> Data retrivals
 
+S3 FREE TIER :
+--> 5 GB Standard Storage
+--> 2000 PUT Operations (upload)
+--> 20,000 GET operation (open/download)
+
 Glacier data retrival : 
 Bulk retrieval : Typically within 5-12 hours.
 Standard retrieval : Typically within 3-5 hours.
@@ -111,5 +116,78 @@ Preferences --> Billing preferences --> Receive Free Tier Usage Alerts --> Enabl
 
 Task 2 : Create an s3 bucket, Upload an object, Access the Object.
 
+
+==============================================================================================
+
+D: 21/03/24
+
+
+Storage classes
+Versioning
+Life Cycle Management Rule
+Replication
+Encryption
+Static Website hosting
+Bucket policy
+
+
+
+If you are typing "Delete" ==> you'll get delete Marker. 
+If you are typing "perm Delete" ==> You wont get Delete marker.
+
+Delete the "Delete Marker" to get your object back.
+_________
+
+Version : AWS maintains multiple copies in s3 bucket. 
+--> Defaultly versioning will be in Suspended state.
+
+--> When versioning is enabled on bucket, If we delete an object
+
+Versioning : HIDE
+--> S3 will show most recent uploaded object only / Current version objects.
+--> We will get a Delete Marker. 
+--> TO get object back / undo delete, Set Version to SHOW, Delete the delete marker.
+
+Versioning : SHOW
+--> If we delete an object, it deletes permanently.
+_____________________________________________________________________________________
+
+Life Cycle Management Rule : 
+
+--> We can apply Rule to entire bucket
+--> We can limit rule to a prefix (Folder)
+--> We can limit rule to objects by specifing a "Tag"
+
+
+S3 Standard --> StandardIA/IT --> Glacier --> Delete
+S3 Standard --> Glacier --> Delete
+S3 Standard --> Delete
+
+____________________
+
+S3 Static Website Hostic : 
+
+--> We need to make data public read, then only our website will deliver. 
+--> Purchased Domain name should be same as Bucket name. 
+
+http://learnaws.co.in.s3-website.ap-south-1.amazonaws.com  ==> learnaws.co.in
+
+http status codes :
+2XX : OK/Success
+3XX : Redirection
+4XX : Client sider error
+5XX : Server sider error
+
+https://www.free-css.com/free-css-templates
+
+
+Task : Download a template from Internet. Deliver the webiste using s3 - static webiste feature.
+
+Task : Create Version enabled bucket and test "Delete marker" and multiple version objects.
+
+Task : Configure life cycle management rule to transit data from S3Standard to "Delete" after 2 days. (personal account).
+
+
+==============================================================================================
 
 
