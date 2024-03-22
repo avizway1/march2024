@@ -126,11 +126,13 @@ Storage classes
 Versioning
 Life Cycle Management Rule
 Replication
-Encryption
 Static Website hosting
 Bucket policy
+Encryption
 
 
+--> versioning helps us to get our data to correct state, AWS maintains multiple copies of our data.
+--> If we accedentally overwrite any data or delete any file, we can get it to correct state.
 
 If you are typing "Delete" ==> you'll get delete Marker. 
 If you are typing "perm Delete" ==> You wont get Delete marker.
@@ -163,7 +165,15 @@ S3 Standard --> StandardIA/IT --> Glacier --> Delete
 S3 Standard --> Glacier --> Delete
 S3 Standard --> Delete
 
-____________________
+
+Task : Create Version enabled bucket and test "Delete marker" and multiple version objects.
+
+Task : Configure life cycle management rule to transit data from S3Standard to "Delete" after 2 days. (personal account).
+
+
+==============================================================================================
+
+D: 22/03/24
 
 S3 Static Website Hostic : 
 
@@ -180,14 +190,49 @@ http status codes :
 
 https://www.free-css.com/free-css-templates
 
-
 Task : Download a template from Internet. Deliver the webiste using s3 - static webiste feature.
 
-Task : Create Version enabled bucket and test "Delete marker" and multiple version objects.
+--------------------
 
-Task : Configure life cycle management rule to transit data from S3Standard to "Delete" after 2 days. (personal account).
+CRR / SRR : 
+--> Source bucket and destination bucket must be enabled with versioning. 
+--> Existing objects will not replicate to the destination bucket.
+--> All future / subsequent uploads will replicate to destination bucket. 
+
+RTC : Replication time control : Data replicates to destination bucket with in 15 Min. (99.99% of the data) : COST US
+
+___
+
+Data transfer from One region to another region "cost us".
+Data transfer within a region won't cost us anything.
+_______________________
+
+aws s3 sync s3://sourcebucket s3://Targetpath		==> 12:00AM   (task scheduler / cron job)
+
+aws s3 sync localfolder s3://s3backupbucket
+
+_______________________
+
+Event notifications : 
+
+--> SNS : Simple Notification Service : 1000 EMAILs Free Tier eligibility
+--> SQS : Simple Queue Service
+--> Lambda 
+
+--> Make sure you edit the SNS topic's "Access Policy to everyone".
+
+______________________
 
 
-==============================================================================================
+Task 1 : Create a bucket in N Virginia, Configure Versioning and test it. 
+
+Task 2 :  Create another bucker in N Virginia region only.. configure same region replication between these buckets.
+
+Task 3 : Create a Life CYcle management rule to transit current version objects from s3 standard to Delete after 1 Day.
+Transit previous version objects to Delete after 1 Day.
+
+Task 4 : Configure to receive alerts to your email id when any Object deleted from an S3 bucket.
+
+Task 5 : Download a template from Internet. Deliver the webiste using s3 - static webiste feature.
 
 
