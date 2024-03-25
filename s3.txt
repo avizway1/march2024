@@ -236,3 +236,104 @@ Task 4 : Configure to receive alerts to your email id when any Object deleted fr
 Task 5 : Download a template from Internet. Deliver the webiste using s3 - static webiste feature.
 
 
+====================================================================================================
+
+D: 25/03/24
+
+
+--> In-Transit Encryption : 
+	SSL (Secure socket layer) / TLS (Transport layer secure)
+
+--> SSE (Server Side Encryption) / At-rest : 
+
+SSE-S3 : S3 platform generates and manages the key material. whoever have valid access on S3 platform can decrypt/view the data. (An encryption key that Amazon S3 creates, manages, and uses for you). AES-256
+--> We need to use this to make any data public.
+
+SSE-KMS : Key Management Service : 
+	KMS (AWS managed keys) (aws/s3) DMK (Default Master Key) : KMS Service generates and manages the key material. whoever have valid access on S3 platform can decrypt/view the data. We cannot delete these keys. 
+--> We cannot make data public using this keys.
+
+	 CMK (Customer managed keys) : KMS Service generates and manages the keymaterial.
+Along with S3 platform, the IAM user need to have valid permissions on ENCRYPTION KEY also. 
+NO FREE TIER ELIGIBILITY.
+
+	SSE-C (Customer Provided Key): Customer generates and upload the key material to KMS and KMS uses this key material to encrypt/decrypt the data. Customer can change the key material at any time. 
+NO FREE TIER ELIGIBILITY.
+
+--> CSE (Client Side Encryption) : 
+Before uploading data to s3 platform, we can use our own software/applications to encrypt the data. That encryptrd data we can send to s3. AWS is not completely responsible for this mechanism.
+
+Encryption key generation : 
+--> Choose key type : Symmetric /Asymetric : Symetric as s3 supports
+--> Choose key Administrator
+--> Choose Key Users
+--> Review and create
+
+
+SSE-S3 : S3 created key and key material, No Addl Permisisons on Encry key, Only S3 access is fine.
+SSE-KMS DMK : KMS created key and key material, No Addl Permisisons on Encry key, Only S3 access is fine.
+SSE-KMS CMK : Customer Creates key and KMS manages key material, Along with S3 access, User/role should have "Key Usage" permissions.
+SSE-KMS Customer provided : Customer Create key and Customer provide key material, Along with S3 access, User/role should have "Key Usage" permissions.
+
+---------------------------------------------
+
+https://www.youtube.com/watch?v=r17Z75TqjU0&t=548s
+
+
+
+Task : Try to access s3 using 3rd party applications. (S3 browser, Cyberduck, Cloudberry explorer, winscp)
+Steps : Create an IAM user provide s3 readonly/fullaccess, generate Accesskey and SecretKey. Use this with 3rd party tool.
+
+
+Task 2 : Enable Encryption on s3 bucket and test it. (SSE-S3/AWS Managed key KMS-DMK)
+*** practice in Sandbox if you want to test CMK (it will cost us if you are using personal account)**
+
+
+
+
+
+
+
+
+
+
+================================================================================================
+
+Object Lock : 
+
+--> Versioning must be enabled.
+
+Permanently allows objects in this bucket to be locked. Additional Object Lock configuration is required in bucket details after bucket creation to protect objects in this bucket from being deleted or overwritten.
+
+Governance : Users with specific IAM permissions can overwrite or delete protected object versions during the retention period.
+
+Compliance : No users can overwrite or delete protected object versions during the retention period.
+
+_____
+
+Performance : 
+3500 PUT Object per second per prefix
+5500 GET Object per second per prefix
+
+--> maintain/Increase the uniqueness for the object names.
+--> Use more prefixes (folders)
+
+
+My Req : i want 10,000 Uploads / Sec.. 
+
+Bucket : 5500 uploads/sec.. 
+--> folder1 --> 5500
+--> folder2 --> 5500
+--> folder3 --> 5500
+
+-----
+Cloudwatch : Monitoring
+
+Monitoring S3 Bucket : 
+
+Free Metrics:
+Total number of objects
+Total bucket size
+
+We do have an option to enable paid metrics.
+
