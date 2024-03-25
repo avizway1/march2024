@@ -64,6 +64,48 @@ FREE TIER:
 20,000 Downloads / GET Per Month
 
 
+==================================
+
+
+In-Transit : AWS Responsibility. 
+
+SSE/ Server Side Encyption : 
+
+SSE-S3 : S3 platform generates and manages the key material. Whoever have access on S3 Platform, he can decrypt the data.
+No additional permissions required on encry key.
+
+SSE-KMS DMK (Default Master key) : KMS platform generates and manages the key material. Whoever have access on S3 Platform, he can decrypt the data.
+No additional permissions required on encry key.
+Based on your services usage, these DMKs generates automatically.
+
+SSE-KMS CMK (Customer Managed key) : KMS platform generates and manages the key material. Along with the Pplatform access, User should have Encryption key "usage" permisisons. 
+User should have key usage permisions.
+
+-> Choose type : Symetric
+-> Provide a Name
+-> key administrative permissions : Whoc an administrate this key
+-> key usage permissions : who can decrypt the data if data is encry with this key.
+
+
+SSE-KMS C (Customer Provided key) : Customer generates and manages the key material. Along with the Pplatform access, User should have Encryption key "usage" permisisons. 
+User should have key usage permisions.
+
+-> Choose type : Symetric
+-> Provide a Name
+-> key administrative permissions : Whoc an administrate this key
+-> key usage permissions : who can decrypt the data if data is encry with this key.
+
+-> User should upload his key material to KMS service.
+
+
+CSE : Client Side Encryption : Before uploading the data to aws/s3, Customer is going to encrypt his data by using his own software, then he is going to upload it to aws.
+-> If customer is not ready to upload any unencry data to aws, he can go with this option.
+
+
+
+
+
+
 
 
 
