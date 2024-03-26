@@ -7,6 +7,7 @@ slack channel name : march2024
 Sandbox : Refer the shared document.
 
 Sandbox related queries : Ashish / 9032930773
+(You have to complete full payment to get sandbox)
 
 **Practice Zoom link : **
 AWS Online LAB Sessions From 9AM-1PM,  2PM to 4PM (Mon to Sat)
