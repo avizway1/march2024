@@ -424,19 +424,9 @@ Total bucket size
 We do have an option to enable paid metrics.
 
 
+========================================================================
 
-
-
-
-
-
-
-
-
-
-
-
------
+D: 27/03/24
 
 Storage Class Analysis : Analyze storage access patterns to help you decide when to transition objects to the appropriate storage class.
 
@@ -445,7 +435,7 @@ _______
 Transfer acceleration : Uses Edge locations for data transfer. (COST US)
 S3 Transfer Acceleration is not supported for buckets with periods (.) in their names
 
-https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html?region=ap-south-1&origBucketName=2505-avinash
+https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html?region=ap-south-1&origBucketName=avinashspeedtest
 
 ========================================================================
 
@@ -474,18 +464,16 @@ If we have larger file to uploade to s3 paltform, We can initiate the "Multi Par
 How to Perform multiPart upload to S3 : 
 https://www.youtube.com/watch?v=ZJaNTLKz334
 
-
 ---
 Pricing : https://calculator.aws/
 Free Tier : https://aws.amazon.com/free
-
 
 ========================================================================
 
 S3 platform Consistency mechanism: 
 
 For Put of new object, "read after write consistency". (If upload success, we can start accessing the data without any delay)
-Eventual consistenacy For overwrite an object / delete an object. (After we delete the object, Some of the request may deliver the content (in some milli seconds)) (You have uploaded object with latest data and trying to access, you have chances to get previous data object) 
+Eventual consistenacy For overwrite an object / delete an object. (After we delete the object, Some of the request may deliver the content (in some milli seconds)) (You have uploaded object with latest data and trying to access, you have chances to get old/previous data object)
 _________________
 
 AWS Snow Family : 
@@ -502,7 +490,6 @@ AWS Direct Connect : Dedicated connection between on-premise/local environment t
 --> Airtel, jio, sify
 
 Site-to-site VPN : Happens over the internet.
-
 
 =================================================================================
 
