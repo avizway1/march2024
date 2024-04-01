@@ -196,8 +196,6 @@ browser-method
 How to Connect to Linux Instance :
 
 --> Select Instance, click on "Connect" --> "ec2 instance connect" --> "ec2-user" --> Connect. (We don't use this in realtime)
-___
-
 
 ===========
 Windows Command prompt with openssh
@@ -216,8 +214,6 @@ __
 Enabling SSH in your windows 10 /11 laptops.
 
 https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui#install-openssh-for-windows
-
----
 
 ===========
 Putty method
@@ -252,3 +248,51 @@ Linux Instances : Default username : ec2-user  / redhat / ubuntu
 
 Task : Launch Linux ec2 instance and get connect to it.
 
+===========================================================================
+
+D: 01/04/2024
+
+whoami		--> tells us as what user we are working.
+sudo		--> allow user to execute the command with root level permissions
+sudo su		--> Switch to root user
+exit		--> Exit from root user to ec2-user
+clear		--> Clears the screen
+
+ls			--> List the files/folders
+ls -ll		--> Longh list the files/folders from current path
+ls -a		--> List all including hidden files
+pwd			--> Print working directory
+mkdir		--> Create a Directory/Folder
+touch 		--> o bytes file/ plain file
+cd			--> Change directory
+cd ..		--> To come one step back from current path.
+rmdir		--> remove directory, if it is empty.
+rm -rf foldername/	--> Delete a directory that contains files
+
+copy and paste :  cp
+cut and paste  :  mv
+
+to rename a file we use "mv" command :  mv oldfilename newfilename
+
+_________________________
+
+vim / vi / nano
+
+VIM Editor : 
+
+vim filename	--> Open this file in VIM editor
+
+Press I			--> INSERT Mode
+Press ESC		--> ReadOnly Mode
+:wq				--> Write and Quit (Write changes to file and quit the editor)
+:q!				--> Quit the Editor without writing the changes
+
+set number		--> To set page numbers in VIM
+set nonumber	--> To remove page numbers
+dd				--> Delete the current line
+10dd			--> Delete 10 lines from cursor
+
+=====================================================================================
+
+Free Linux Course : coupon code : AVINASHAWS2
+https://www.udemy.com/course/linuxwithavinash/?couponCode=AVINASHAWS2
