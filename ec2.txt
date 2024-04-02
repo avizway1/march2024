@@ -272,6 +272,8 @@ rm -rf foldername/	--> Delete a directory that contains files
 copy and paste :  cp
 cut and paste  :  mv
 
+mv/cp source-file destination-path
+
 to rename a file we use "mv" command :  mv oldfilename newfilename
 
 _________________________
@@ -296,3 +298,94 @@ dd				--> Delete the current line
 
 Free Linux Course : coupon code : AVINASHAWS2
 https://www.udemy.com/course/linuxwithavinash/?couponCode=AVINASHAWS2
+
+=====================================================================================
+
+D: 02/04/24
+
+Req: Make this linux Instance as Web Server (Apache).
+
+rpm : Redhat package manager
+yum : Yellowdog Update manager
+
+
+
+ssh : 22
+RDP : 3389
+http : 80
+https : 443
+mysql : 3306
+mssql : 1433
+nfs : 2049
+
+
+yum install httpd -y
+service httpd status			--> httpd webserver service status
+service httpd start/stop/restart
+chkconfig httpd on				--> Makes httpd as logon service.
+
+path : /var/www/html/
+
+cd /var/www/html/
+
+Apache configuration path : /etc/httpd/conf/httpd.conf  ==> edit this file "LISTEN 80", change it to desired port number.. "LISTEN 8080", Save and Quit
+
+==> make sure you restart the service to take changes effect.
+
+
+to check web page locally : curl http://localhost/
+
+to check web page on modified port : curl http://localhost:8080/
+
+We get 2 types of errors..
+1. Timeout : Your req not able to reach the web server. problem with Security group.
+2. Connection refused : Service is not in running state. Verify status by running "service httpd status"
+
+Tool to Move the files to amazon linux ec2 instance : WinSCP
+
+
+current Ip : http://54.196.103.169/  Stop and start
+
+--------
+
+EIP : Elastic IP Address : If you need a dedicated/fixed IP address for your ec2 instance, you can generate an EIP and associate it.
+-> EIP wont change even after performing STOP/START operation on ec2 instance.
+NO FREE TIER ELIGIBILITY. IT WILL COST YOU.
+
+
+Task 1 : Launch an amazon linux 2, make it as webserver and deliver custom web content. (httpd-apache)
+
+Task 2 : Once task 1, completed. Change apache configuration port from 80 to 8888/8080 and Delive same webpage on 8888/8080 port.
+
+Task 3 : Launch an Amazon Linux 2, install nginx and deliver custom web page.
+
+Test EIP in Sandbox environment.
+
+===========================================================================
+
+
+
+
+
+
+How to deal with Volumes
+
+root volume : COntains OS : gp2,gp3, io1, io2 and magnetic
+
+IOPS : Input and output Operations per second
+
+GP2, Gp3 : general Purpose :SSD: Suitable for most of the common workloads.
+io1, io2 : Provisional IOPS :SSD: Gives best perf among all storage options. 
+sc1 ($), st1($$) : HDD : wont support boot/root volume : Best throughput values. : log processing/bigdata
+magnetic : standard : We dont use this.. : Cheapest storage 
+
+Windows : FAT, NTFS and ReFS
+Linux : ext3, ext4, xfs
+
+EBS : Elastic Bloc Storage : Block based storage : Designed to run OS.. 
+
+root : SSD and magnetic is supported.
+Addl volume : SSD, HDD and magnetic
+
+
+
