@@ -480,8 +480,12 @@ yum install xfsprogs
 
 ===========================================================================
 
-Task 1 : Launch an ec2 instance, Add a 2 gb additional volume, associate it with ec2 instance.. Make 2 gb volume available at os level and write some data into it. (Reboot and verify)
-Reboot instance and enter "df -Th" after reboot, Now also it should show 2gb volume with data.
+Task 1 : 
+-> Launch an ec2 instance, 
+-> Add a 2 gb additional volume, associate it with ec2 instance.. 
+-> Make 2 gb volume available at os level and write some data into it. (Reboot and verify)
+-> Reboot instance and enter "df -Th" after reboot, 
+-> Now also it should show 2gb volume with data.
 
 
 Task 2 : Launch another ec2 instance in same AZ as existing ec2 instance.. Detach the volume from instance 1 and attach it to newly launched ec2 instance. Mount it to new directory. You should be able to see all the data.
@@ -489,6 +493,7 @@ Task 2 : Launch another ec2 instance in same AZ as existing ec2 instance.. Detac
 
 ============================================================================================
 
+D: 04/04/24
 
 Instance 1 in ap-south-1a ---> Instance 2 in ap-south-1a ==> Detach from instance 1 and attach to instance 2.. 
 
@@ -507,12 +512,11 @@ Choose the volume --> Take a Snapshot --> share the snapshot to another aws acco
 
 Instance 1 volume need to share with everyone.. --> Create a snapshot --> Share to "Public" --> 
 
-
 MultiAttach : https://www.youtube.com/watch?v=2j8R3ajSo3s
 
 ** We cannot decrease the size of an EBS volume. Only increase is possible.
-EBS VOlumes : Always use EBS volumes only.
 
+EBS VOlumes : Always use EBS volumes only.
 
 Snapshot : Backup copy of an EBS volume.
 
@@ -528,6 +532,8 @@ https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-mana
 --> We cannot share an Default Master key Encrypted snapshot.
 --> If we are using Custom Managed encryption key, we can share snapshot with another aws account, but we need to provide permissions on encryption key also to another aws account.
 
+Interview : How to encrypt an existing unencrypted ebs volume.?
+
 ______________________________________________________________________________________
 
 SOP : Standard Operational Procedure : 
@@ -536,11 +542,17 @@ SLA : Service Level Agreements :
 DLM : Data Lifecycle manager : Automate the snapshot creation process. 
 --> We use "tags" to filter the resources. 
 
+How freq you want to take backup . 24 hrs
+
 Default Retention Values: 
 Prod : 5 Days
 Non Prod : 3 Days 
 
+--> Automatically you can copy to another region (or) another aws account.
+
 Fast snapshot restore : Enable fast snapshot restore to ensure that volumes created from snapshots created by this policy instantly deliver all of their provisioned performance.
+
+Interview : What is your ec2 instances/services backup strategy.?
 
 __________
 
@@ -552,10 +564,47 @@ Get the 2gb volume data from instance 1a to newly launch 1b ec2 instance.. Make 
 
 Task : Go through below article and try to understand it. https://aws.amazon.com/blogs/storage/automating-amazon-ebs-snapshot-and-ami-management-using-amazon-dlm/
 
-
 ============================================================================================
 
+D: 05/04/24
 
+Scenario : 10 ec2 instances.. AV, MS Office, Custom WP, CUstom OS users, Applications, IIS.. 
+
+--> Launching 10 instance : connect to 10 instance and install everything in all 10 instance.. 
+--> 1 ec2 instance : Install everything.. : Keep it as Image : --> Launch "n" number using image..
+
+Client : OS with CIS Benchmarks (Center for Internet Security) : 
+
+*** GoldenAMI = CUstomized AMI.. Won't work with keypairs.. We need to change the password.. 
+
+Ec2 instance , Perform customizations --> Create a Golden AMI --> From GAMI we can launch n num of ec2 instance.. 
+
+Similar to Snapshots..
+
+--> We can launch another instance in same region using GAMI.
+--> We can copy Region 1 GAMI to Region 2, And launch an ec2 instance in Region 2. 
+--> We can share GAMI from Acc 1 to Acc 2. 
+--> We can share GAMI to public.
+
+______________________________________
+
+
+Task 1 : Launch Linux ec2 instance, Make it as webserver.. Add custom webpages.. Add a 2gb volume while launching and make it perm mount.. then Create a Golden AMI and 
+-> Launch instance from GAMI and test output. 
+
+
+Task 2 : Launch a Windows ec2 instance, Connect to it.. CHANGE ADMINISTRATOR PASSWORD, change wallpaper, install "putty" software, Install IIS and deliver custom webpage..
+Now, STOP the INSTANCE and create a GoldenAMi. 
+-> Launch an instance from GAMI, connect and Verify you got all custom settings or not.???
+
+
+Task 3 : How to setup password authentication to ec2-user user instead of keypair authentication.
+https://comtechies.com/password-authentication-aws-ec2.html
+
+-> Adv 
+Task 4 : How to create a new user in Amazon Linux 2, how can we provide ssh access to instance for newly created user using keypair. 
+
+==========================================================================================
 
 
 
