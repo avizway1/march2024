@@ -648,21 +648,13 @@ Task 3 (optional) : Install stress package on an ec2 instance, run this stress c
 Now, create an Alarm to monitor your ec2 instance cpu, when cpu usage is 80% more for 5 min, Reboot your ec2 instance and get an alert to your email.
 
 
-
 Real Env process : First we need to create a Change request (technical details old conf, new config, cost diff, when you perform this(implementation window)).. Change Advisory board/CAB --> once it is approved, we will implement this change.
 Over weekends by taking proper downtime.  
 
-
-
-
-
-
-
-
-
-
 ____________________________________________________________________________________
 
+
+D: 10/04/24 
 
 Vertical Scaling : Upgrading same instance resources.. t2.micro --> c5.2xlarge
 Horizantal Scaling : Distribute application load to multiple ec2 instances.. 
@@ -672,6 +664,50 @@ Application ELB : Layer 7 ELB.. : http and https
 Network ELB : Layer 4 ELB.. : TCP, UDP, TLS 
 Gateway ELB : GENEVE / 3rd party security virtual applicances.. 
 
+
+**Please select at least two Subnets in different Availability Zones to provide higher availability for your load balancer.
+
+** Dont use same Security group for your ec2 instance and Load balancer.
+
+For ELBs, We will get DNS Endpoint.. Not an IP Address
+
+If you want to view IP address of an ELB, 
+--> Navigate to "Network interfaces" and observe, You can get IP of ELB.
+--> nslookup "ELB-DNS-NAME"
+___________________________________________________
+
+Target Group : Each target group is used to route requests to one or more registered targets. When you create each listener rule, you specify a target group and conditions. When a rule condition is met, traffic is forwarded to the corresponding target group.
+
+Application ELB : http and https
+
+Application Load balancing algorithm : 
+--> Round robin
+--> Least outstanding requests
+--> Weighted ***
+
+--> We cannot assign a dedicated IP address for our Application ELB.
+
+Network ELB : TCP.. 
+--> Flow Hash algorithm.
+--> We CAN assign a dedicated IP address for our network ELB.
+
+Application LB Supports path based routing, also supports Microservices.
+
+NLB is capable to handle millions req/sec.
+
+ELB Access Logs : Logging on ELB. Destination is s3.
+___________________________________________________________________
+
+Free Tier : 750 hrs/month
+-----------------------
+
+
+Task : Create an ALB, and deliver webpage on One TG / Port :80. 
+Test Stickyness.
+
+Task 2 : on existing LB, Add listeners on 8080, 8888. 
+
+Task 3 : what is Telnet and how to use telnet, test it with an ec2 instance on port 22.
 
 
 
