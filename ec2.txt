@@ -653,7 +653,6 @@ Over weekends by taking proper downtime.
 
 ____________________________________________________________________________________
 
-
 D: 10/04/24 
 
 Vertical Scaling : Upgrading same instance resources.. t2.micro --> c5.2xlarge
@@ -686,20 +685,29 @@ Application Load balancing algorithm :
 --> Weighted ***
 
 --> We cannot assign a dedicated IP address for our Application ELB.
+--> Application LB Supports path based routing, also supports Microservices.
+
+-----------------------
 
 Network ELB : TCP.. 
 --> Flow Hash algorithm.
---> We CAN assign a dedicated IP address for our network ELB.
-
-Application LB Supports path based routing, also supports Microservices.
-
-NLB is capable to handle millions req/sec.
+--> We CAN assign a dedicated IP address for our network ELB. Its not possible for ALB.
+--> NLB is capable to handle millions req/sec.
 
 ELB Access Logs : Logging on ELB. Destination is s3.
 ___________________________________________________________________
 
 Free Tier : 750 hrs/month
------------------------
+------------------------
+
+==========================================================================================
+
+--> use same SG for all your web servers. Initially open for everyone, then modify it later.
+--> Use a diff SG for your load balancer. Open 80 for everyone.
+
+SG pipeline mechanism : open port 80 on your ec2 instances SG, Instead open for everyone, Add your Load balancer Security group.
+
+=========================================================================================
 
 
 Task : Create an ALB, and deliver webpage on One TG / Port :80. 
@@ -708,6 +716,11 @@ Test Stickyness.
 Task 2 : on existing LB, Add listeners on 8080, 8888. 
 
 Task 3 : what is Telnet and how to use telnet, test it with an ec2 instance on port 22.
+
+Task 4 : Configure and test pipeline mechanism.
+
+task 5 : COnfiogure NLB and test the output.
+
 
 
 
