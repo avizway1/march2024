@@ -795,7 +795,13 @@ Task 3 : Create an updated version in "launch template" and test the blue and gr
 
 
 
+Task 4 : Create alarms on ASG. Whenever CPU Usage is <= 20% for 5 min, Set your desired capacity to 1.
+When CPU usage is More than >=70% for 5 min, Set your desired capacity to 3.
+Add load on your ec2 instance using stress package.
 
+Task 5 : Try Step scaling policy using shared script.
+
+Task 6 : Configure Schedule scaling policy.
 
 
 
