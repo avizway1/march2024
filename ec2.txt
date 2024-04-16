@@ -803,47 +803,83 @@ Task 5 : Try Step scaling policy using shared script.
 
 Task 6 : Configure Schedule scaling policy.
 
+============================================================================================
+
+D: 16/04/24
+
+Security Groups place imp role in instance access.
+What traffic you want to deliver from your ec2 instance to outside world, you need to open it in inbound rules. (Traffic coming from outside world to ec2 instance and ec2 is responding to that request).
+Outbound : ec2 instance acessing traffic. Defaultly ec2 allowed with all incoming traffic (From ec2, we can access any protocol, any traffic from any network).
+
+--> SGs are stateful. We need to takes care about the inbound rules.
+--> Changes to the SG takes effect without any delay.
+--> We can add one SG to multiple ec2 instance.
+--> One instance can have multiple SGs also.
+-> There is No "DENY" option in SGs.
+
+============================================
+
+EFS : Elastic File System : File Share : Shared Storage solution for Multiple ec2 instances. : 
+--> Network File System : NFS v4.1 : Port 2049
+--> Support only Linux OS 
+--> No Pre Provisioning required.
+--> Add entry in "/etc/fstab" file.  Get entry info from "/etc/mtab" file
+
+mkdir instance1
+
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-059f7ba6a82f9405a.efs.ap-south-1.amazonaws.com:/ (shared)
+
+
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-059f7ba6a82f9405a.efs.ap-south-1.amazonaws.com:/ instance1/
+
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-059f7ba6a82f9405a.efs.ap-south-1.amazonaws.com:/ /var/www/html/
+
+
+==> For windows OS we can use FSx, Works with SMB Protocol (Server message block)
+
+_______________________________________________________________________________________
+
+--> Create a security group and open NFS protocol. 
+			--> Open for entire VPC IP address
+			--> Open for ec2 instance private IP addresses
+		** --> Open for ec2 instance Security group (pipeline mechanism)
+		   --> As a last option, if no above option is working, open for Everyone.
 
 
 
-
-
+Task : Create EFS and Mount it to multiple ec2 instances. Deliver Web Content to both the instances from EFS.
 
 
 Task : 
-Create an ASG with a V1 Launch tempplate.. Launch with Desired capacity as 2.. Test it.. 
+1. Launch an ec2 instance, connect to it, 
+2. Create EFS.. 
+3. Install httpd in your ec2 instance.. 
+4. Mount EFS to /var/www/html/ and create index.html...  
+5. make it as perm mount. get EFS entry from /etc/mtab and write to to /etc/fstab
+6. Test your ec2 instance webpage.
 
-Configure Alarm to set Desired capacity as 1, when cpu utilisation is =<10. 
---
-Configure scheduled scaling to set DC as 3 instance at specific time and test it. 
+7. Stop above ec2 instance and create a goldenAMI.
+8. launch a new ec2 instance from GoldemAMi, test your webpage. (**)
 
+Then Process to below steps
+==> Now create a GOLDENAMI.. 
+==> Configure ASG with this GOLDENAMI.. COnnect to any of the ec2 instance, modify the content.. this modification should reflect in all instance.. 
 
-Optional task : Try "stress" command to put load on ec2 instance and test high usage.
-
-sudo amazon-linux-extras install epel -y
-sudo yum install stress -y
-
-stress --cpu 1 --timeout 900
-nproc --> cpu count
-
-________
-
-
-========================================================================
-
-Task : Configure pipeline mechanism between ec2 instances and elb.
---> Edit your ec2 instance security group and open port 80 for ELB SG
-
---> When we give direct instance IP, it should not deliver any webpage.
---> When we give elb dns name, this should work.
-
-Task 2 : Create a launch template with t2.micro
-Create an ASG, Adjust Desired capacity manually and observe ec2 creation and terminations.
-
-Task 3 : Create an ASG and try Simple Scaling, Step scaling with given script.
-
-============================================================================================
+===================
 
 
+
+
+
+
+
+Plecement Groups : 
+--> Cluster PG : for group of ec2 instance, to get very very min latency, we can use this.
+--> partition PG
+--> Spread PG
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html
+
+======================================
 
 
