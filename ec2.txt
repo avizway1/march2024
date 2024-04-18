@@ -869,8 +869,8 @@ D: 17/04/24
 
 Plecement Groups : 
 --> Cluster PG : for group of ec2 instance, to get very very min latency, we can use this.
---> partition PG
---> Spread PG
+--> partition PG : We can create 7 partitions, Every part will have its dedicated power connectivity and network connectivity.
+--> Spread PG : Every instance will have its own power connectivity and network connectivity.
 
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html
 
@@ -908,8 +908,107 @@ Task 1 : Configure Eventbridge to stop an ec2 instance at a particular time usin
 Task 2 : Configure to stop an ec2 instance after 5 minutes, trigger an email with custom email format.
 
 Task 3 : Configure to get an alert when someone deleted an s3 bucket.
-** You have to create a data trail. In sandbox you can try this. 
-________________________
+** You have to create a data trail. In sandbox you can try this.
+
+==========================================================================================
+
+D: 18/04/24
+
+AWS CLI : 
+
+
+Step 1 : Download and install aws cli tools in your laptop. To verify installation run below comamnd
+
+aws --version
+
+Step 2 : Configure AWS CLI, FOr that we need AccessKeyID and SecretAccessKey.
+
+--> Create an IAM user.
+--> Then navigate to "Credentials" and generate keys.
+
+
+aws ec2 describe-instances --instance-ids i-0f864a025fd09ddd9
+
+
+IAM User : programatic Access : AccesskeyID and SecretAccesskey : AWS CLI.. 3rd, cdk/sdk
+
+https://aws.amazon.com/cli
+
+aws --version			--> Tells us what cli version is installed.
+
+configure the aws cli: 
+aws configure
+AccesskeyID:
+SecretAccesskey:
+Region:
+output :
+
+
+aws servicename commands
+
+aws s3 ls			--> List all the s3 buckets
+aws s3 ls s3://avinash.bucket	--> list objects from the s3 bucket
+aws s3 ls avinash.bucket
+
+aws s3 cp/sync sourcepath destinationpath
+
+aws s3 mb s3://avinash.bucket.1 --region ap-south-1
+
+aws s3 cp s3://avinash.bucket s3://avinash.bucket.1 --recursive
+
+aws s3 sync s3://avinash.bucket s3://avinash.bucket.1
+
+presign
+
+aws s3 presign s3://bucketname/objectname --expire 60
+
+aws s3 presign s3://avinash.bucket.1/s3.txt --expire 30
+
+___
+
+https://docs.aws.amazon.com/cli/latest/reference/
+
+__
+
+https://awsclibuilder.com/home
+
+___
+
+--profile : We can access multiple AWS accounts from cli using profile option.
+
+Credentials path in windows : C:/users/yourusername/.aws/ Enable Hidden directory view, 
+
+
+IN SANDBOX: Kindly note that during EC2 IAM role creation you need to choose only "AmazonS3FullAccess" and "AmazonSSMManagedInstanceCore". 
+"AmazonSSMManagedInstanceCore" policy will be used for connecting ec2 instances via session manager.
+
+
+____________________________
+
+
+Task : Launch an ec2 instance using CLI.  (ami id, instance-type, subnet-id, security group id, keypair, count)
+
+Task 2 : Stop that ec2 instance using CLI comamnds.
+
+Task 3 : Start the same ec2 instance using cli.
+
+Task 4 : Launch an ec2 instance and Configure a role to access s3 data. (dont configure accesskey/secretkey.. use roles)
+
+Task 5 : 
+1. Create a sample webpages and Upload a webtemplates to an s3 bucket.. 
+2. launch an ec2 instance, while launching the instance, make your instance as webserver using userdata.
+3. While using userdata,  copy all the webcontent from s3 bucket to DocumentRoot path (/var/www/html/). Perform using "userdata".
+
+#!/bin/bash
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+#copy data from s3 to ec2		(--recursive)
+
+
+Task 6 (Optional.. For Exp candidates mandatory) :  Create an IAM user in Account 1.. Allow this user to switch to "Account 2".. When he switch to account 2, Allow him to perform only "S3FullAccess".
+
+Refer : https://www.youtube.com/watch?v=sZiiB4yF0VY
 
 
 
@@ -917,18 +1016,5 @@ ________________________
 
 
 
-
-
-
-Instance store volumes : We don't use this in real environments.   (NO FREE TIER ELIGIBILTY)
-	--> Also called as Ephemeral storages (Temporary storage).
-	--> We cannot STOP/Start the instance.
-	--> Storage will be delivered from underlying host/physical resources.
-	--> If required, we can reboot. We don't loss any data.
-	--> If underlying h/w failure happens, we'll loss all the data.
-
-________________________
-
-Instance Isolation : https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjr993FsAyS65uL4QPbGu8n_JcB6Fwq6jDylWglIapsQQjHfbcbir83OT-I-_a-nhvvo8&usqp=CAU
 
 
