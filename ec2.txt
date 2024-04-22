@@ -1102,14 +1102,14 @@ Then you can attach.
 If you want to attach a Public IP for NewENI, You can create an EIP and attach it.
 
 
+====================================================================================================
+
+D: 22/04/24
 
 
+Cloudwatch Dashboards: central location to monitor multiple resources usage. You can add individual resources metric graphs into a single dashboard.
 
-
-
-
-
-==================================
+----
 
 Instance store volumes : We don't use this in real environments.   (NO FREE TIER ELIGIBILTY)
 	--> Also called as Ephemeral storages (Temporary storage).
@@ -1117,13 +1117,26 @@ Instance store volumes : We don't use this in real environments.   (NO FREE TIER
 	--> Storage will be delivered from underlying host/physical resources.
 	--> If required, we can reboot. We don't loss any data.
 	--> If underlying h/w failure happens, we'll loss all the data.
+	--> Accidental stop/start occured, We will loss all data.
 
 ==================================
 
 Instance Isolation : https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjr993FsAyS65uL4QPbGu8n_JcB6Fwq6jDylWglIapsQQjHfbcbir83OT-I-_a-nhvvo8&usqp=CAU
 
+VMWare: ESXi
+Microsoft ; Hyper-V
+AWS : Support XEN, AWS OWned "Nitro"
 
-================================================================================================
+
+==================================
+
+Dedicated and Shared tenancy :
+--> Shared tenancy : underlying hardware shared with multiple customers.
+--> Dedicated tenancy:
+	--> Dedicated instance : Dedicated instance provided by aws. No control on backend process.
+	--> Dedicated host : We can apply licenses at underlying physical resources. Also, we can launch multiple instances on a dedicated host.
+
+===================================
 
 ElasticBeanstalk : It provides preconfigured platforms.
 --> Python, java, go, ruby, php, .net
@@ -1165,13 +1178,7 @@ reservation-id
 security-groups
 services/
 
-==================================
 
-Dedicated and Shared tenancy :
---> Shared tenancy : underlying hardware shared with multiple customers.
---> Dedicated tenancy:
-	--> Dedicated instance : Dedicated instance provided by aws. No control on backend process.
-	--> Dedicated host : We can apply licenses at underlying physical resources. Also, we can launch multiple instances on a dedicated host.
 
 
 
