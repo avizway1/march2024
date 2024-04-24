@@ -50,6 +50,31 @@ ns-1592.awsdns-07.co.uk
 ns-1101.awsdns-09.org
 
 
+
+Mumbai : 
+index.html
+
+<html>
+<body>
+<h1 style="background-color:powderblue;">This is my Mumbai WebServer</h1>
+<p style="background-color:tomato;">Route53 Demo Session.</p>
+</body>
+</html>
+
+------------------
+
+USA
+
+<html>
+<body style="background-color:powderblue;">
+<h1>This is my USA WebServer</h1>
+<p>R53 Demo Session.</p>
+</body>
+</html>
+
+
+
+
 #!/bin/bash
 yum install httpd -y
 echo "<h1>This is a Mumbai WebServer</h1>" > /var/www/html/index.html

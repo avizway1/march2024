@@ -1127,6 +1127,8 @@ VMWare: ESXi
 Microsoft ; Hyper-V
 AWS : Support XEN, AWS OWned "Nitro"
 
+Baremetal hypervisor : On top of Hardware, a hypervisor runs, we can laiunch guestOS on top of hypervisor.
+HostBased hypervisor : On top of hardware, a host OS runs (win 10/11), on top of it, we need to install hypervisor, then we can run GuestOS.
 
 ==================================
 
@@ -1138,19 +1140,24 @@ Dedicated and Shared tenancy :
 
 ===================================
 
-ElasticBeanstalk : It provides preconfigured platforms.
---> Python, java, go, ruby, php, .net
+ElasticBeanstalk : It provides preconfigured platforms. : Its a PaaS (platform as a Service)
+--> Python, java, go, ruby, php, .net, Docker
 --> We can deploy/upload our code to this platform. 
---> AWS Creates ELB, ASG automatically for our instances.
+--> AWS Creates ELB, ASG automatically for our instances, Based on the preset option we select.
 --> Less customisations at OS level, We cannot deliver multiple applications.
 
-==================================
+====================================================================
+
+D: 23/04/24
+
 
 Metadata : metadata means, data about the data. 
 We are using ec2 instance to deliver some data/webpage. We do have some info about the ec2 instance.. 
 By using metadata url, we can get info about the ec2 instance.
 
-curl http://169.254.169.254/latest/meta-data/metrics/vhostmd
+curl http://169.254.169.254/latest/meta-data/
+
+curl http://169.254.169.254/latest/user-data/
 
 ami-id
 ami-launch-index
@@ -1179,8 +1186,17 @@ security-groups
 services/
 
 
+Status Checks on ec2 instance : we have 2 types of status checks. When any instance is launched, aws performs 2 status checks.
+1. System Status check : underlying hardware status check. Healthy/unhealthy. 
+	fix : Perform stop and start multiple times. Otherwise, contact aws.
+2. Instance status check : os level checks, Boot health status, Volume size check.
+	fix : First reboot.. Then verify boot logs. "get Systemn logs" and inspect for the issue.
+		  We can perform "replace root volume" operation.
 
 
+https://www.youtube.com/playlist?list=PLneBjIzDLECkZXsv7g-YsP6bBteTpTgLC
+
+go though ec2 video
 
 
 
