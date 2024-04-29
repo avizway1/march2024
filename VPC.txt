@@ -189,13 +189,144 @@ Task : Create a CustomVPC with 6 Subnets as we discussed in Class.
 
 2 --> Public / web			--> Launch JUMP Server (windows)
 2 --> private / app			--> launch a Linux 2 server
-2 --. private / db
+2 --> private / db
 
 
 ================================================================================
 
+D: 29/04/2024
+
+PublicRoute : We need to associate InternetGateway. 
+PrivateRoute without internet : Don't add NAT.
+PrivateRoute With Intenet : Create NAT Gateway and add NAT Gateway.
+
+VPC NAT Gateway (NO FREE TIER ELIGIBILITY): Is designed to provide Internet to private Subnet resources. NAT always runs in custom VPCs public subnet. We need to generate an EIP (Elastic IP). 
+
+Private subnet ec2 instances want to access something from internet / endpoint hosted over the internet / patching purpose it needs internet. 
+
+--> Make sure your edit PrivateRoute, and add an entry with 0.0.0.0/0 via NAT gateway.
+
+____________________________________________________________________________________
+
+Enable Logging at VPC : 
+Flow Logs: We can enable flowlogs at 
+--> VPC Level
+--> Subnet Level
+--> Instance Level
+
+We can choose destination as 1. S3 bucket 2. Cloudwatch Logs groups 3. kenisis.
 
 
+--------------------------------
+
+permissions for flowlogs role policy:
+
+--> create a policy and add below permisisons to that policy
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:DescribeLogGroups",
+                "logs:DescribeLogStreams",
+                "logs:CreateLogGroup",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+---
+
+Create a role and associate above policy to role you are creating.
+
+Set rust entity as below:
+
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "vpc-flow-logs.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}
+
+
+======================================================================================================
+
+NACL : Network Access Control List : We can allow/deny traffic at Subnet level/AZ level using this NACLs.
+--> We need to takes care about the inbound rules and outbound rules.
+--> one subnet can be member of one NACL at a time.
+
+
+SG works as firewall at Instance level
+NACLs works as firewall at subnet level
+
+--> Default NACLs, : all subnets member of this. It allows all the traffic.
+--> New NACLs won't allow any traffic, Defaultly deny everything.  
+
+--> Ephemeral ports / Temporary ports need to opened in NACL. 
+https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html#nacl-ephemeral-ports
+1024-65535
+
+--> Lowest rule number will have highest permissions. 
+
+
+
+
+Task : 
+
+
+
+
+
+
+
+
+====================================================================
+
+Endpoints : Private Links : It provides private connectivity to the resources. If we have any requirement, s3 requests/dynamodb req should not flow over the internet. 
+
+You have an instance in private subnet without Internet(NAT GW), you want to access s3/other aws services.?
+
+
+Endpoint Services : We can use this endpoint services to share a service from your own aws acocunt to anotyher aws ccount securely. We are controlling how trafic flow is happening in backend.
+--> refer youtube video
+
+
+NAT Gateway Works with IPv4. 
+If our VPC is configured to use IPv6, Instead of NAT Gateway, We use "Egress Only Internet Gateways".
+
+
+Can we associate multiple CIDRs for our VPC.
+Yes.. 
+
+_________________
+
+VPC Peering : Allow us to enable communication between multiple VPCs. (Same region, DIff region, Diff AWS accout VPCs)
+
+--> Requester VPC and Accepter VPC should not have same CIDR range.
+--> VPC Peering is non transitive peering. 
+--> Update both the VPCs route tables with Another VPC CIDR blocks via Peering connection. 
+
+			Requester VPC (mumbai)				Accepeter VPC (Sydney)
+VPC CIDR	192.168.0.0/21						172.31.0.0/16
+VPC ID		vpc-0acc05c2c56f13b51				vpc-b3eb1dd5
+Region		ap-south-1							ap-southeast-2
+ACC ID		501170964283						501170964283
+
+
+-----------
 
 
 
