@@ -284,7 +284,22 @@ https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html#nacl-ephe
 
 
 
-Task : 
+Task : Create a NAT gateway and provide internet to PRIVATE SUBNET Instances with the help of NAT gateway. (COST US).. Make sure you delete EIP after your task.
+
+
+Task 2 : Launch a LINUX Instance in PUBLIC SUBNET, Call/use it as JUMP Server, Now Launch another Linux Instance in CUSTOMVPC PRIVATE SUBNET.
+Connect to the Private Linux instance from Public Linux instance.
+
+=====
+
+Task  3 : Create a VPC with 6 Subnets. (2 Public SUbnets and 4 Private Subnets)
+2 Public SUbnets (WEB) (ap-south-1a, ap-south-1b)
+4 Private SUbnets (APP & DB) (ap-south-1a, ap-south-1b)
+
+Optional task:
+Task  : user task 3 settings and draw.io website and design this diagram.
+https://app.diagrams.net/?splash=0&libs=aws4
+
 
 
 
