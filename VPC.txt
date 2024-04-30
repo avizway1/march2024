@@ -245,7 +245,7 @@ permissions for flowlogs role policy:
 
 Create a role and associate above policy to role you are creating.
 
-Set rust entity as below:
+Set Trust entity as below:
 
 
 {
@@ -273,7 +273,7 @@ SG works as firewall at Instance level
 NACLs works as firewall at subnet level
 
 --> Default NACLs, : all subnets member of this. It allows all the traffic.
---> New NACLs won't allow any traffic, Defaultly deny everything.  
+--> New NACLs won't allow any traffic, Defaultly deny everything.
 
 --> Ephemeral ports / Temporary ports need to opened in NACL. 
 https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html#nacl-ephemeral-ports
@@ -282,7 +282,7 @@ https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html#nacl-ephe
 --> Lowest rule number will have highest permissions. 
 
 
-
+=====
 
 Task : Create a NAT gateway and provide internet to PRIVATE SUBNET Instances with the help of NAT gateway. (COST US).. Make sure you delete EIP after your task.
 
@@ -301,32 +301,32 @@ Task  : user task 3 settings and draw.io website and design this diagram.
 https://app.diagrams.net/?splash=0&libs=aws4
 
 
-
-
-
-
-
-
-
 ====================================================================
 
-Endpoints : Private Links : It provides private connectivity to the resources. If we have any requirement, s3 requests/dynamodb req should not flow over the internet. 
+D: 30/04/2024
+
+Endpoints : Private Links : It provides private connectivity to the resources. If we have any requirement, s3 requests/dynamodb request should not flow over the internet. 
 
 You have an instance in private subnet without Internet(NAT GW), you want to access s3/other aws services.?
 
 
-Endpoint Services : We can use this endpoint services to share a service from your own aws acocunt to anotyher aws ccount securely. We are controlling how trafic flow is happening in backend.
---> refer youtube video
+==================
 
+Endpoint Services : We can use this endpoint services to share a service from your own aws acocunt to anotyher aws account securely. We are controlling how trafic flow is happening in backend.
+
+--> refer youtube video : https://www.youtube.com/watch?v=MeIhu3eseyA
+
+=================
 
 NAT Gateway Works with IPv4. 
 If our VPC is configured to use IPv6, Instead of NAT Gateway, We use "Egress Only Internet Gateways".
 
+================
 
 Can we associate multiple CIDRs for our VPC.
 Yes.. 
 
-_________________
+================
 
 VPC Peering : Allow us to enable communication between multiple VPCs. (Same region, DIff region, Diff AWS accout VPCs)
 
@@ -334,14 +334,30 @@ VPC Peering : Allow us to enable communication between multiple VPCs. (Same regi
 --> VPC Peering is non transitive peering. 
 --> Update both the VPCs route tables with Another VPC CIDR blocks via Peering connection. 
 
-			Requester VPC (mumbai)				Accepeter VPC (Sydney)
-VPC CIDR	192.168.0.0/21						172.31.0.0/16
-VPC ID		vpc-0acc05c2c56f13b51				vpc-b3eb1dd5
-Region		ap-south-1							ap-southeast-2
+			Requester VPC (mumbai)				Accepeter VPC (singapore)
+VPC CIDR	192.168.0.0/18						172.31.0.0/16
+VPC ID		vpc-05a1f1dee74bc2d4d				vpc-0d5ff77f3dcb273cb
+Region		ap-south-1							ap-southeast-1
 ACC ID		501170964283						501170964283
 
+==================
 
------------
+8 Subnets in environment :  2 public-web (public), 2 application (private), 2 Database/data (private), 2 lambda.. 
 
+If our VPC is running with IPv6: instead of NAT Gateway, we need to "Egress Only Internet gateway"
+
+==================
+
+VPN Connectivity (openvpn): https://www.youtube.com/watch?v=JSTyjISscNg
+
+Transit Gateway : https://www.youtube.com/watch?v=xyLlMBHy2wc
+
+==================
+
+Site-to-site vpn settings
+
+1. Create Virtual private gateway.
+2. Create Customer Gateway. You need to provide your corporate office Public IP address which is confired in Firewall.
+3. Using the Step 1 and step 2 resource and configure the Site to site vpn. Download the configuration and share it with Firewall team.
 
 
