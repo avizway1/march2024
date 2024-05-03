@@ -134,20 +134,128 @@ Role : Instance   ||   Primary & Replica
 Primary : Supports read and write
 Replica : Supports only read operations
 
-_________________
+
+====================================================================================================
+
+Project 1 : https://github.com/avizway1/sns-project-repo/tree/main
+
+help : https://www.youtube.com/watch?v=Fk4LIFULlYw&list=PLneBjIzDLECkz7SwM-HFqZsvAZDz4hcpq&index=11
+
+====================================================================================================
+
+D: 03/05/24
+
+
 
 Manual Snapshots : We can create snapshots manually. These won't delete along with rds db instance.  We need to delete manually.
 
 Automated/system snapshots : AWS creates these, We cannot delete these.
 
-
 RDS won't work on In-Place restoration. Restoration happens as a new rds db instance with new endpoint.
 
-====================================================================================================
+_________________
 
-project 1 : https://github.com/avizway1/sns-project-repo/tree/main
+Homegenious : mysql --> DMS --> AWS RDS Mysql
+heterogenious : IBM DB2 --> SCT (Schema Convertion tool) --> DMS --> AWS RDS Mysql/aurora
 
-help : https://www.youtube.com/watch?v=Fk4LIFULlYw&list=PLneBjIzDLECkz7SwM-HFqZsvAZDz4hcpq&index=11
+Step 1 : create a DMS cluster (dms.t2.micro)
+Step 2 : Create source endpoint (Create an RDS cluster, and restore the shared sample Database), test the connectivity to DMS cluster
+Step 3 ; Create a Target endpoint (Create a new rds cluster) test the connectivity to DMS cluster
+
+Step 4 : Create a Migration task using Source and target endpoints (step 2 and 3)
+
+migrate existing data. one time.
+Migrate changes only. only changes migrates.
+Migrate existing and continue migration. 
 
 
+Task : https://www.youtube.com/watch?v=SXuOjfKpIrs
+
+-------
+
+
+Workpress Task : https://github.com/avizway1/wordpress-project-repo
+
+video : https://www.youtube.com/watch?v=7BkGGc8u2Yk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How to connect to Redshift : 
+https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-using-workbench.html
+Tool Name : sql workbenh/J.
+
+
+OLAP : Online Analytical process : Redshift
+OLTP : Online Transactional process : RDS
+
+Redshift: 
+leader node : Designed to run query on compute nodes.
+Compute Node : it stores actual data
+
+
+Introduction to Redshift : https://www.youtube.com/watch?v=tSHCf1koYk8
+Serverless : https://www.youtube.com/watch?v=mEEbqIdQf7w
+Load Data from s3 : https://www.youtube.com/watch?v=AcVNDbSy9L8
+Elasticache: https://www.youtube.com/watch?v=wp1QnBW2kIM
+
+
+=================================
+
+
+In-memory caching solution for DynamoDB : DAX (Database Accelerator)
+
+RDS has a Cache solution, Solution Name is "Elasticache".
+it has 2 opensource caching engines.
+--> MemcacheD
+--> Redis : Support authentication menthods (IAM Auth / RedisAUTH).
+
+
+Neptune : Fast, reliable graph database built for the cloud.
+Amazon DocumentDB : Fully-managed MongoDB-compatible database service
+Amazon keySpace : Kassandra Compatable AWS database service.
+Amazon QLDB : Fully Managed ledger Database.
+
+
+DynamoDB Application : https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TicTacToe.html
+
+
+
+
+=============
+
+
+CREATE SCHEMA finance;
+USE finance;
+
+CREATE TABLE finance (
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    department VARCHAR(50),
+    salary DECIMAL(10, 2)
+);
+
+INSERT INTO finance (name, department, salary) VALUES
+('Avinash Redy', 'finance', 65000.00),
+('Anudeep Reddy', 'finance', 63000.00),
+('Aravind t', 'finance', 62000.00),
+('Skanda reddy', 'finance', 67000.00),
+('raghu', 'finance', 64000.00);
+
+=============
 
