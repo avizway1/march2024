@@ -145,8 +145,6 @@ help : https://www.youtube.com/watch?v=Fk4LIFULlYw&list=PLneBjIzDLECkz7SwM-HFqZs
 
 D: 03/05/24
 
-
-
 Manual Snapshots : We can create snapshots manually. These won't delete along with rds db instance.  We need to delete manually.
 
 Automated/system snapshots : AWS creates these, We cannot delete these.
@@ -174,27 +172,14 @@ Task : https://www.youtube.com/watch?v=SXuOjfKpIrs
 -------
 
 
-Workpress Task : https://github.com/avizway1/wordpress-project-repo
+Wordpress Task : https://github.com/avizway1/wordpress-project-repo
 
 video : https://www.youtube.com/watch?v=7BkGGc8u2Yk
 
 
+===========================================================================================
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+D: 06/05/24
 
 How to connect to Redshift : 
 https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-using-workbench.html
@@ -217,7 +202,6 @@ Elasticache: https://www.youtube.com/watch?v=wp1QnBW2kIM
 
 =================================
 
-
 In-memory caching solution for DynamoDB : DAX (Database Accelerator)
 
 RDS has a Cache solution, Solution Name is "Elasticache".
@@ -226,15 +210,13 @@ it has 2 opensource caching engines.
 --> Redis : Support authentication menthods (IAM Auth / RedisAUTH).
 
 
-Neptune : Fast, reliable graph database built for the cloud.
+Amazon Neptune : Fast, reliable graph database built for the cloud.
 Amazon DocumentDB : Fully-managed MongoDB-compatible database service
 Amazon keySpace : Kassandra Compatable AWS database service.
 Amazon QLDB : Fully Managed ledger Database.
 
 
 DynamoDB Application : https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TicTacToe.html
-
-
 
 
 =============
