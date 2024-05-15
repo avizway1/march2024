@@ -1,0 +1,30 @@
+Install docker.. 
+
+yum install docker -y
+service docker start
+chkconfig docker on
+
+docker images				--> to list of all images and sizes
+
+docker rmi imagename		--> delete image
+
+docker run nginx			--> look for nginx in local and get it from hub and use same for future runs.
+
+docker ps					--> List all running containers
+
+docker ps -a				--> all running./existed
+
+docker stop docker-container
+
+docker rm docker-container	--> to remove
+
+docker run nginx			--> download and run the image
+
+docker pull nginx			--> Just download the image
+
+docker run ubuntu sleep 60
+
+docker run -it -p 8080:80 imageid		--> Interactive metod, runs on ec2 port 8080, image exposed on 80.
+
+docker run -d -p 80:80 imageid		--> Detached mode, run on ec2 port 80, image exposed on port 80.
+
