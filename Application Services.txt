@@ -177,6 +177,51 @@ Task Definition : Settings or configuration of our task.
 
 Task : Run nodejs application and nginx as a service/task on ecs cluster. Refer the github link for dockerfiles.
 
+==============================================================================
+
+D: 17/05/24
+
+Codecommit
+CodeDeploy
+Codepipeline
+codebuild
+
+"S3/codecommit/git" --> Deploy to "ElasticBeanstalk"
+
+________________
+
+Create an IAM user, Make sure he has "Adminaccess / Codecommit full access", Generate "programatic keys (Accesskeyid&secretaccesskey)" and configure it in your local laptop.
+
+aws configure
+accesskey : 
+secretaccesskey : 
+region : ap-south-1
+output :  
+
+You need to have some softwares. 
+1. Install Python
+2. Install git
+3. install grc : pip install git-remote-codecommit
+
+
+git add .
+git status
+git commit -m "commit msg"
+git push
+git pull
+git clone
+git init
+
+Task : get familier with above commands.
+
+
+GIT : 
+https://www.youtube.com/watch?v=rtI26X6FJX0&list=PLneBjIzDLECkdgoinrTO7D519zgPEmcte
+
+
+================================================================================
+
+
 
 
 
